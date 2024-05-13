@@ -35,7 +35,7 @@ export function Carrousel() {
   ];
   return (
     <Swiper
-      slidesPerView={2}
+      slidesPerView={1}
       spaceBetween={50}
       centeredSlides={true}
       autoplay={{
@@ -44,6 +44,14 @@ export function Carrousel() {
       }}
       pagination={{
         clickable: true,
+      }}
+      breakpoints={{
+        768: {
+          slidesPerView: 2,
+        },
+        0: {
+          slidesPerView: 1,
+        },
       }}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
@@ -54,7 +62,7 @@ export function Carrousel() {
             <img
               src={image.url}
               alt={`${image.id}`}
-              className="max-h-[900px] w-full"
+              className="w-full h-full"
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-main bg-opacity-80 rounded-md p-4">
